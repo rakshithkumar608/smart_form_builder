@@ -15,12 +15,13 @@ const App = () => {
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow p-4">
         <div className="container mx-auto flex justify-between">
-          <Link to="/" className="font-bold">
+          <Link to="/" className="font-bold text-xl">
             SmartForms
           </Link>
           <div className="space-x-4">
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="/login">Login</Link>
+            <Link to="/dashboard" className="p-2 border-red-300 border rounded-xl bg-red-400 hover:bg-red-500 shadow-emerald-700 font-semibold">Dashboard</Link>
+
+            <Link to="/login" className="p-2 border-green-300 border rounded-xl bg-green-400 hover:bg-green-500 shadow-emerald-700 font-semibold">Login</Link>
           </div>
         </div>
       </nav>
