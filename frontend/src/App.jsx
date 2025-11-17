@@ -19,7 +19,7 @@ const App = () => {
             SmartForms
           </Link>
           <div className="space-x-4">
-            <Link to="">Dashboard</Link>
+            <Link to="/dashboard">Dashboard</Link>
             <Link to="/login">Login</Link>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react';
 import api from '../api/http';
 
-
-export const AuthContext = createContext
+// eslint-disable-next-line react-refresh/only-export-components
+export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -17,16 +17,13 @@ export function AuthProvider({ children }) {
     localStorage.setItem('token', token);
     setUser(user);
   };
-
   const logout = () => {
     localStorage.removeItem('token');
     setUser(null);
   };
   return (
-   <AuthContext.Provider value={{ user, login, logout}}>
-    {children}
-   </AuthContext.Provider>
-  )
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
-
-export default AuthContext
