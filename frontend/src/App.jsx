@@ -5,6 +5,7 @@ import FormEditor from "./pages/FormEditor";
 import FormPublic from "./pages/FormPublic";
 import { AuthProvider } from "./context/AuthContext";
 import Topbar from "./components/Topbar";
+import LeftPanel from "./components/LeftPanel";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/topbar" element={<Topbar />}/>
+          <Route path="/left" element={<LeftPanel />}/>
           <Route path="/forms/:id/edit" element={<FormEditor />} />
           <Route path="/forms/:slug" element={<FormPublic />} />
         </Routes>
