@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import FormEditor from "./pages/FormEditor";
 import FormPublic from "./pages/FormPublic";
 import { AuthProvider } from "./context/AuthContext";
+import Topbar from "./components/Topbar";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/topbar" element={<Topbar />}/>
           <Route path="/forms/:id/edit" element={<FormEditor />} />
           <Route path="/forms/:slug" element={<FormPublic />} />
         </Routes>
