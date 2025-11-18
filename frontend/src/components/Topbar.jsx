@@ -28,7 +28,7 @@ const Topbar = () => {
             >Logout</button>
             </>
           ): (
-             <Link to="/login" className="border border-blue-500 p-2 bg-blue-400 rounded-xl shadow-sm hover:bg-blue-500">Sign in</Link>
+             <Link to="/login" className="border border-blue-500 p-2 bg-blue-500 rounded-xl shadow-sm hover:bg-blue-500">Sign in</Link>
           )}
         </nav>
       </div>
