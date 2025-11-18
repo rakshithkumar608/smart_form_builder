@@ -10,8 +10,8 @@ export default function FieldBlock({ field, onSelect, onDuplicate, onDelete, isS
           <div className="text-xs text-slate-500 mt-1">{field.type}</div>
         </div>
 <div className="flex gap-2">
-          <button onClick={onDuplicate} className="text-sm text-indigo-600">Duplicate</button>
-          <button onClick={onDelete} className="text-sm text-red-500">Delete</button>
+          <button onClick={onDuplicate} className="text-sm text-black rounded-xl font-semibold p-2 bg-sky-400 hover:bg-sky-500 shadow-blue-400">Duplicate</button>
+          <button onClick={onDelete} className="text-sm text-black rounded-xl font-semibold p-2 bg-red-400 hover:bg-red-500 shadow-red-300">Delete</button>
         </div>
       </div>
     </motion.div>
