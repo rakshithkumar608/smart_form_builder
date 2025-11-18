@@ -1,1 +1,63 @@
 @import "tailwindcss";
+
+/* Custom tokens for glass/gradient theme */
+:root{
+  --glass-bg: rgba(255,255,255,0.75);
+  --glass-strong: rgba(255,255,255,0.9);
+  --card-blur: 8px;
+  --primary: #4F46E5;
+  --accent: #22D3EE;
+}
+
+
+/* page bg gradient */
+body {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(79,70,229,0.06), transparent),
+              radial-gradient(900px 500px at 90% 90%, rgba(34,211,238,0.05), transparent),
+              linear-gradient(180deg,#f8fafc,#eef2ff);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* glass card helper */
+.card {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  backdrop-filter: blur(var(--card-blur));
+}
+
+
+/* lifted card shadow */
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+
+/* subtle border */
+.card-border {
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+
+/* button */
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), #6366f1);
+  color: white;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: rgb(31,41,55);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+}
+
+/* small utilities */
+.field-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.80));
+  border-radius: 14px;
+  padding: 0.75rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+}

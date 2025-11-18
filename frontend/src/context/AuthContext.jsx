@@ -6,11 +6,19 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(token) {
-      api.get('/auth/me').then(res => setUser(res.data)).catch(()=> setUser(null));
+    if(!token) { 
+      // defer to next tick to avoid calling setState synchronously within the effect
+      setTimeout(() => setLoading(false), 0);
+      return;
     }
+    api.get('/auth/me')
+      .then(res => setUser(res.data))
+      .catch(() => setUser(null))
+      .finally(() => setLoading(false));
   }, []);
 
   const login = (token, user) => {
@@ -22,7 +30,7 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );
